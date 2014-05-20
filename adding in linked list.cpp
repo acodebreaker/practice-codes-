@@ -38,6 +38,16 @@ temp->next=*p;
 return ;
 }
 
+void addatend(struct node *p,int x)
+{
+while(p->next!=NULL)
+p=p->next;
+
+struct node *temp=(struct node *)malloc(sizeof(struct node));
+temp->data=x;
+temp->next=NULL;
+p->next=temp;
+}
 
 
 
@@ -48,6 +58,8 @@ addatbeginning(&start,4);
 addatbeginning(&start,5);
 addatbeginning(&start,3);
 addatbeginning(&start,1);
+addatend(start,10);
+addatend(start,242);
 printlist(start);
 
 
